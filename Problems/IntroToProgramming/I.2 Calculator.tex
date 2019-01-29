@@ -1,0 +1,156 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{I.2}
+\newcommand\duedate{2/1/2019}
+\newcommand\assignmenttype{IntroToProgramming}
+\newcommand\foldername{\tt{IntroToProgramming} }
+\newcommand\filename{\tt{Calculator\_LastName.py}\;\;}
+\newcommand\probname{Calculator}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Programming Skills
+			\begin{Bitemize}
+				\item Arithmetic operations
+				\item Variables
+			\end{Bitemize}
+			\item Using input variables
+			\item Equal sign with programming not usual
+			\item Testing code with different inputs
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	Variables are the boxes that are used to store information in a program.  Usually this information is a number, but it could also be text, a list of numbers, or a completely different object.  We take this information and put it in a box labeled with a name.  
+	
+	The concept of variables differs from that in mathematics because we can change the contents of the box, and often do.  In math, the variable $x$ stands for a certain value, we just don't know what it is so we call it $x$.  In code however, \tt{x} is simply a storage device for any information, and that information can be changed during the code.
+	
+	The main place this is seen is with the equal sign.  In math the statement $x=2$ means that the variable $x$ is the same as the number 2.  In code, the statement \tt{x=2} should really be written \tt{x} $\leftarrow$ \tt{2}, because what we are doing is storing the number 2 in the box labeled \tt{x}.  This allows us to write \tt{x = x + 2} and have it still make sense.  We are taking the number stored in \tt{x} adding 2, then storing that result back in \tt{x}.
+	
+	We often want a box with multiple compartments, so we don't have to come up with a name for all the information, since it is related.  For this we use lists.  These give one name to a set of objects that we want to store together.  These will be very useful when we start using loops.
+	
+	One main difference between mathematical programming and other programming is that we rarely write code for other users, mostly it is just for ourselves to test an idea.  Therefore, we usually don't need to ask the user for input.  Asking the user for input slows down testing and is not needed when we have access to the code.  Instead, we can use \textbf{input variables}.  These are variables defined at the beginning of the program that are used throughout the program.  They are usually parameters that change small portions of your program, but not the main computation.  If you want to change one of these parameters, as the programmer you can simply change the variable value in code.  We will be using input variables often during this course.
+	
+	
+	
+	
+	\prog{
+		\begin{itemize}
+			\item Most arithmetic operations are the same as with math, with the exception of exponentiation, which uses \tt{**}, i.e. \tt{x**2}.
+			\item To find the remainder after division (the mod operation) use \tt{\%}, i.e. \tt{5 \% 2} which returns 1.
+			\item Create an empty list with \tt{mylist = []}.
+			\item Append a new element to a list with \tt{mylist.append(2)}.
+		\end{itemize}
+		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Has three input variables labeled \tt{x,y} and \tt{z}
+		\item Create a list with 5 components, where each component stores:
+		\begin{enumerate}
+			\item[First:] \tt{x} plus \tt{y}
+			\item[Second:] \tt{y} times \tt{z} plus 3 times \tt{x}
+			\item[Third:] The first component squared
+			\item[Fourth:] The ratio of (2 times the second component minus half of \tt{x}) and the first component
+			\item[Fifth:] The remainder when you divide 7 by 3
+		\end{enumerate}
+		\item Next, add 3 to the third component and store the result in the third component of the list
+		\item Next, multiply the last component by $\frac{3}{4}$ and store the result in the last component.
+		\item Finally, with an appropriate text message, print out the sum of all components in the list.
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+	\end{itemize}
+
+	
+\end{document}
