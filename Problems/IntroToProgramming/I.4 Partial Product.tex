@@ -1,0 +1,156 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{I.4}
+\newcommand\duedate{}
+\newcommand\assignmenttype{Intro To Programming}
+\newcommand\foldername{\tt{IntroToProgramming} }
+\newcommand\filename{\tt{PartialProd\_LastName.py}\;\;}
+\newcommand\probname{Partial Product}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Programming Skills
+			\begin{Bitemize}
+				\item For loops
+			\end{Bitemize}
+			\item Importing packages
+			\item Using numpy arrays
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	We now take the idea of partial sums and modify it slightly to consider partial products.  In the same way we can consider an infinite sum of numbers, we can also consider an infinite product of numbers.  The notation is written as,
+	\[ \prod_{i=1}^\infty a_i. \]
+	We can also talk about a sequence of partial products, defined by,
+	\[ p_n = \prod_{i=1}^n a_i.\]
+	
+	In this problem, we will be looking at sequences of partial products to determine which infinite products converge and which diverge.  We will also use these sequences to attempt to estimate what the infinite products converge to, when they converge.
+	\prog{
+		\begin{itemize}
+			\item Syntax for a \tt{for} loop: \tt{for ii in range(N):}
+			\item Import \tt{numpy} with \tt{import numpy as np}
+			\item Create a numpy array of zeros with \tt{x = np.zeros((10))}
+		\end{itemize}
+		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Create an input variable \tt{N} for the total number of terms in the partial product sequence.
+		\item Generate the first $N$ terms for the following partial product sequences using a \tt{for} loop, not a built-in function,
+		\begin{itemize}
+			\item $\ds p_n = \prod_{i=2}^n \frac{i^3-1}{i^3+1}$
+			\item $\ds q_n = \prod_{i=1}^n \frac{e^{i/100}}{i^{10}}$
+			\item A partial sum of your creation
+		\end{itemize}
+		\item Print out the first 15 terms and the last 15 terms in each sequence, with an appropriate description.
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+		\item A Latex document \tt{PartialSum\_LastName.pdf} with the following information:
+		\begin{itemize}
+			\item Write down the partial sum terms that you created
+			\item State whether you think each series will converge or diverge and explain why.
+			\item If you think the series will converge, give an estimate of what it will converge to.
+		\end{itemize}
+	\end{itemize}
+
+	
+\end{document}

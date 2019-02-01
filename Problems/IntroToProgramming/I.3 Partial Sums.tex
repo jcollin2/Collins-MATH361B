@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{I.3}
+\newcommand\duedate{}
+\newcommand\assignmenttype{Intro To Programming}
+\newcommand\foldername{\tt{IntroToProgramming} }
+\newcommand\filename{\tt{PartialSum\_LastName.py}\;\;}
+\newcommand\probname{Partial Sums}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Programming Skills
+			\begin{Bitemize}
+				\item For loops
+			\end{Bitemize}
+			\item Importing packages
+			\item Using numpy arrays
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	Recall from Calculus 2 the idea of a sequence of partial sums,
+	\[ s_n = \sum_{i=0}^n a_i.\]
+	This was used to discuss series convergence where we said if the sequence $s_n$ converged, then the series $ \sum_{i=0}^\infty a_i$ also converged.  For this problem, we will compute the first $N$ terms of the \emph{sequence} of partial sums, and use these terms to guess as to whether the associated series converges or diverges.  However, in order to get a good idea of the behavior of the series, we will use a large value for $N$.  This massive computation can be simplified with the use of loops.
+	
+	In addition, we will be storing the the terms of the sequence in a numpy array.  There are some subtle differences between numpy arrays and python lists.  Numpy arrays allow the use of linear algebra functions, which can be useful in many situations.
+	\prog{
+		\begin{itemize}
+			\item Syntax for a \tt{for} loop: \tt{for ii in range(N):}
+			\item Import \tt{numpy} with \tt{import numpy as np}
+			\item Create a numpy array of zeros with \tt{x = np.zeros((10))}
+		\end{itemize}
+		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Create an input variable \tt{N} for the total number of terms in the partial sum sequence.
+		\item Generate the first $N$ terms for the following partial sum sequences using a \tt{for} loop, not a built-in function,
+		\begin{itemize}
+			\item $\ds s_n = \sum_{i=1}^n \frac{\ln(i^4 +i+3)}{\sqrt{i}+3}$
+			\item $\ds t_n = \sum_{i=1}^n \frac{e^{i/100}}{i^{10}}$
+			\item A partial sum of your creation
+		\end{itemize}
+		\item Print out the first 15 terms and the last 15 terms in each sequence, with an appropriate description.
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+		\item A Latex document \tt{PartialSum\_LastName.pdf} with the following information:
+		\begin{itemize}
+			\item Write down the partial sum terms that you created
+			\item State whether you think each series will converge or diverge and explain why.
+			\item If you think the series will converge, give an estimate of what it will converge to.
+			\item How many terms did you use to come to this conclusion?  Why did you use that many?
+		\end{itemize}
+	\end{itemize}
+
+	
+\end{document}
