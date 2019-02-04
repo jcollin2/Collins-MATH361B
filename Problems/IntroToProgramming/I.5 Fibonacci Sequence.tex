@@ -1,0 +1,168 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{I.5}
+\newcommand\duedate{2/13/2019}
+\newcommand\assignmenttype{Intro To Programming}
+\newcommand\foldername{\tt{IntroToProgramming} }
+\newcommand\filename{\tt{FibSeq\_LastName.py}\;\;}
+\newcommand\probname{Fibonacci Sequence}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Programming Skills
+			\begin{Bitemize}
+				\item For loops
+			\end{Bitemize}
+			\item Use numerical data to determine new identity
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	The Fibonacci sequence has been around for millenia, but has been in the western world since about the 1200s.  It is defined recursively in the following way.  The first two terms are given as 
+	\[ F_0 = 0, F_1 = 1,\]
+	adn the following terms in the sequence are determined by the recursive relationship,
+	\[ F_{n} = F_{n-1} + F_{n-2}.\]
+	
+	The Fibonacci sequence has been seen in multiple places in nature, more that would be expected from such a simple to define sequence.  Some examples are music, optics, rabbit population (one of the earliest observations), botany, and computer search algorithms.  If you are interested, you can start looking for more information on the Wikipedia page.
+	
+	In addition to its appearance in nature, the Fibonacci sequence has many interesting mathematical properties.  One such property is another recurence relation between its terms, called Cassini's identity,
+	\[ F_n^2 - F_{n-1}F_{n+1} = (-1)^{n-1}.\]
+	A generalization of Cassini's identity is Catalan's identity,
+	\[F_n^2 - F_{n+r}F_{n-r} = (-1)^{n-r}F_r^2,\]
+	for 
+	
+	
+	
+	
+	
+	
+	
+	\prog{
+		\begin{itemize}
+			\item Syntax for a \tt{for} loop: \tt{for ii in range(N):}
+			\item To create an empty list use \tt{my\_list = []}
+		\end{itemize}
+		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Create an input variables \tt{F0} and \tt{F1} for the first two terms of your sequence.
+		\item Create an input variable \tt{N} for the number of terms to generate in your sequence.
+		\item Generate the first $N$ terms for the sequence using the Fibonacci recursion relation
+		\[ F_{n} = F_{n-1} + F_{n-2},\]
+		but using the initial terms \tt{F0} and \tt{F1}.  \textbf{Be sure to store the sequence in a list, not an \tt{np.array}}.
+		\item Write code to check whether the sequence you generate satisfies Catalan's identity.
+		\item Print out the last 10 terms in the sequence you generate, with an appropriate description.
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	For this project, you will be testing whether Catalan's identity is satisfied when the two initial terms of the sequence are changed.  If you find the identity is not satisfied, can you generate a similar identity that depends on the initial terms?
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+		\item A Latex document \tt{FibSeq\_LastName.pdf} with the following information:
+		\begin{itemize}
+			\item Explain briefly what you did to determine if Catalan's identity holds when the initial terms of the sequence change.
+			\item If it does not hold, state how you think it changes when the initial terms change.
+			\item If you were able to determine a similar identity, state the identity and how it depends on the initial terms.
+		\end{itemize}
+	\end{itemize}
+
+	
+\end{document}
