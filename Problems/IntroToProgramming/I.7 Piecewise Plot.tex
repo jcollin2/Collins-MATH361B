@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{I.7}
+\newcommand\duedate{2/15/2019}
+\newcommand\assignmenttype{Intro To Programming}
+\newcommand\foldername{\tt{IntroToProgramming} }
+\newcommand\filename{\tt{PWPlot\_LastName.py}\;\;}
+\newcommand\probname{Piecewise Plot}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Programming Skills
+			\begin{Bitemize}
+				\item Functions
+				\item Conditionals
+				\item Plotting
+			\end{Bitemize}
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	This Problem will introduce you to plotting in Python.  Visualizing your data is often very helpful, as humans can obtain and process information easier in visual form than in numerical form in many circumstances.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\prog{
+		\begin{itemize}
+			\item Syntax for a function: \tt{def func\_name(param1,param2):}
+			\item Linearly spaced numpy array: \tt{np.linspace(start value, end value, number inbetween)}
+			\item Use keywords \tt{and}, \tt{or} in a conditional
+			\item Conditional keywords: \tt{if}, \tt{elif}, \tt{else}
+		\end{itemize}
+		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Create an input variable \tt{N} for the number of points in your plot.
+		\item Create a \tt{def} function that represents the following function
+		\[ f(x) = \begin{cases}
+ 		-3(x+2)^2 + 1 \hspace{.2in}& \text{ if } x < -2 \\
+ 		1 & \text{ if }-2 \leq x < -1 \\
+ 		(x-1)^3 + 3 & \text{ if }-1 \leq x \leq 1 \\
+ 		\sin(\pi x) + 3 & \text{ if }1 < x < 2	\\
+ 		3 \sqrt{x-2} + 4& \text{ if }x \geq 2
+ \end{cases}
+.  \]
+		\item Generate a plot of this function over the interval $[-3,3]$.
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+	\end{itemize}
+
+	
+\end{document}
