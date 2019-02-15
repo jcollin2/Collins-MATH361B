@@ -1,0 +1,155 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{I.8}
+\newcommand\duedate{2/22/2019}
+\newcommand\assignmenttype{Intro To Programming}
+\newcommand\foldername{\tt{IntroToProgramming} }
+\newcommand\filename{\tt{I8\_PrimeFunc\_LastName.py}\;\;}
+\newcommand\probname{Primality Function}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Programming Skills
+			\begin{Bitemize}
+				\item Functions
+				\item Conditionals
+				\item Loops
+			\end{Bitemize}
+			\item How to test for primality
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	The basic building blocks of integers are the \textit{prime} numbers.  Prime numbers are numbers that are divisible only by divided by themselves and 1.  The Fundamental Theorem of Arithmetic says that every natural number can be written uniquely as a product of prime numbers.  This makes the prime numbers like the atoms of natural numbers, combining them in different ways gives you a different natural number.  Therefore, it is often very nice to test whether a particular number is prime or not.  Note, if a number is not prime, it is called \textit{composite}.
+	
+	In this problem, you will write a function to test whether a particular number is prime.  This function will be useful to keep around, as this test is used in multiple other projects in the future.  One interesting fact that might be helpful in writing this function; if a number $n$ is composite, the largest prime divisor is no bigger than $\sqrt{n}$.
+	
+	\textbf{Rules for this project: There are many algorithms that test the primality of a number, and I'm sure all of them could be found online very quickly.  You are not allowed to look online for these algorithms.  I want you to come up with your own algorithms to check if a number is prime.}  We might consider some better algorithms in the future, but right now I want to see what you come up with using your own creativity and skills.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\prog{
+		\begin{itemize}
+			\item Syntax for a function: \tt{def func\_name(param1,param2,...):}
+			\item Loops keyword: \tt{for x in range(N)}, \tt{while(condition)}
+		\end{itemize}
+		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Define a function called \tt{prime\_check} (with \tt{def}) that takes as input a natural number, and returns \tt{True} if that input is prime and \tt{False} if that input is composite.
+		\item Create an input variable \tt{n}, determining the largest prime number you will find below.
+		\item Use your \tt{prime\_check} function to determine the $\tt{n}^{th}$ prime number, and print it out with appropriate descriptive text.  (Note: 1 does not count as a prime number, so for instance the $1^{st}$ prime number is 2, and the $2^{nd}$ prime number is 3.)
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+		\item A PDF file written with Latex named \tt{I8\_PrimeFunc\_LastName.pdf} that describes how your primality test algorithm works.
+	\end{itemize}
+
+	
+\end{document}
