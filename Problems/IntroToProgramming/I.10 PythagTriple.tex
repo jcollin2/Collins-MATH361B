@@ -1,0 +1,197 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{I.9}
+\newcommand\duedate{3/1/2019}
+\newcommand\assignmenttype{Intro To Programming}
+\newcommand\foldername{\tt{IntroToProgramming} }
+\newcommand\filename{\tt{I10\_PythagTriple\_Name.py}\;\;}
+\newcommand\probname{Pythagorean Triples}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename
+	 
+	 Points: 5 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Programming Skills
+			\begin{Bitemize}
+				\item Double Loops
+				\item 2D Numpy array
+			\end{Bitemize}
+			\item Finding Pythagorean triples
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	A Pythagorean triple is a set of natural numbers $a < b < c$ for which,
+	\[ a^2 + b^2 = c^2.\]
+	For example, $3^2 + 4^2 = 9 + 16 = 25 = 5^2$, so $(3,4,5)$ is a Pythagorean triple.  Obviously, there are an infinite number of \textbf{real} numbers that satisfy this relation, but Pythagorean triples are interested in the \textbf{natural} numbers that satisfy it.
+	
+	Also for this project, you will be working with nested loops.  These are loops that exist within a loop.  The syntax for this will look something like:
+	\begin{verbatim}
+		for ii in range(N):
+		    for jj in range(ii,N):
+		        code...
+	\end{verbatim}
+	The \tt{ii} loop is called the \emph{outer} loop, and the  \tt{jj} loop is called the \emph{inner} loop.  Hence, for each time the code executes one iteration of the \tt{ii} loop, it will execute \textbf{all} iterations of the \tt{jj} loop.  Note that the inner loop starts at \tt{ii}.  This is not at all required, but is an example of what can be done if the inner loop wants the start of the iteration to depend of which iteration of the outer loop we are on.  Of course, we could also have the end of the inner loop iteration depend on the outer loop iteration with code like, \tt{for jj in range(0,ii):}.
+	
+	Finally, you will be using 2-dimensional numpy arrays in this code.  In order to create a 2D numpy array with specific elements, use code like:
+	\begin{verbatim}
+		x = np.array([[1,2,3],[4,5,6],[7,8,9]])
+	\end{verbatim}
+	where the input is a list of lists.  This will create a numpy array that essentially stores the matrix,
+	\[ \begin{bmatrix} 1&2&3 \\ 4& 5&6\\7&8&9 \end{bmatrix}. \]
+	To create a 2D numpy array consisting of all zeros, use code like:
+	\begin{verbatim}
+		y = np.zeros( [num_rows, num_cols] )
+	\end{verbatim}
+	
+	It is also possible to append a row or column to a 2D array, but before we discuss that, we need to talk about how to create an empty array.  For example, say you want to create an empty array that will eventually have 3 columns and some undetermined number of rows, depending on how much appending you will do.  You can create this array using 
+	\begin{verbatim}
+		x = np.zeros([0,3])
+	\end{verbatim}
+	This array is empty because it has 0 rows.  But now you can append a row with 3 columns.  To do this, you use the following code:
+	\begin{verbatim}
+		x = np.vstack( [ x,np.array([-1,4,2]) ] )
+	\end{verbatim}
+	Note this is similar to the \tt{np.append} function for 1D arrays.  It will return a new array with the row appended.  If you run the above code twice, your 2D array will look like the matrix:
+	\[ \begin{bmatrix}
+		 -1 & 4 & 2 \\
+		 -1 & 4 & 2
+	\end{bmatrix} \]
+	And you can continue doing this to add more rows to your array.
+	
+	This whole process can be done with columns as well.  To add columns to a 2D array, use the \tt{np.hstack} function, which works in exactly the same way, but adds columns to the end of your array. 
+	
+	One thing to be careful about when adding rows or columns, the row or column you add must be of the same dimension as the array you are appending to.  For instance, if you add a row with 4 elements in it to a 2D array with 3 columns, Python will give you an error.
+	
+	Finally, since we are concerned only with natural numbers that satisfy the Pythagorean triple identity, we need a way to check if a variable is a whole number.  To do this, you can use the \tt{is.integer()} function.  This returns true if the variable is an integer, and false otherwise.
+	
+	
+	
+	
+	
+	
+	
+	
+	\prog{
+		\begin{itemize}
+			\item Check if a variable is an integer: \tt{c.is\_integer() == True}
+			\item Loops syntax: \tt{for ii in range(N)}
+			\item Create 2D numpy array of zeros: \tt{my\_array = np.zeros((num\_rows, num\_cols))}
+			\item Append a row to a 2D numpy  array: \tt{x = np.vstack( [x, new numpy array] )}
+		\end{itemize}
+		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item There is exactly one Pythagorean triple for which $a+b+c = 1026$.  Write code to find this Pythagorean triple $(a,b,c)$.  Recall, the Pythagorean triples should satisfy the ordering $a < b < c$ and all are natural numbers.
+		\item Print out this Pythagorean triple, with appropriate descriptive text.
+		\item In addition, store all Pythagorean triples that you happen find along the way to finding this particular triple.  Store them in a $N \by 4$ numpy array, where $N$ is the number of triples you find.  In the first three columns of each row, store each of the triple values $a,b,$ and $c$ respectively.  In the fourth column of each row, store the sum $a+b+c$.
+		
+		Note: Since each person might go about finding the correct triple differently, the triples that are stored might be different for each person.
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+	\end{itemize}
+
+	
+\end{document}

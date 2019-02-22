@@ -1,0 +1,166 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{I.9}
+\newcommand\duedate{3/1/2019}
+\newcommand\assignmenttype{Intro To Programming}
+\newcommand\foldername{\tt{IntroToProgramming} }
+\newcommand\filename{\tt{I9\_PartialProd2\_Name.py}\;\;}
+\newcommand\probname{Partial Product 2}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename
+	 
+	 Points: 5 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Programming Skills
+			\begin{Bitemize}
+				\item Loops
+				\item Lambda functions
+			\end{Bitemize}
+			\item Convergence of infinite products
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	Recall the infinite product,
+	\[ \prod_{n=1}^\infty a_n,\]
+	from a previous problem.  There we examined the convergence or divergence using particular formulas for $a_n$.  Also recall the partial product sequence,
+	\[ p_n = \prod_{i=1}^n a_i.\]
+	
+	We will be doing a similar investigation in this problem, however you will be considering multiple different formulas for $a_n$, using \tt{lambda} functions to change the formula easily.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\prog{
+		\begin{itemize}
+			\item Syntax for a lambda: \tt{a\_n = lambda n: n**2 + 9*n - 7}
+		\end{itemize}
+		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Define a function using \tt{lambda} called \tt{a\_n} that takes as input an integer \tt{n} and returns the value of $a_n$, the factors in the infinite product as seen above.  You will be changing this formula often, which is why you are creating it as a \tt{lambda} function.
+		\item Create an input variable \tt{N}, for total number of terms in the partial product sequence.
+		\item Compute the first $N$ terms in the partial product sequence $\{p_n\}$ using your \tt{lambda} function \tt{a\_n}.  Store the terms in either a list or numpy array.
+		\item Print out the first 15 terms and the last 15 terms in each sequence, with an appropriate description.
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	You will be using your code to determine some pattern as to when an infinite product converges and when it diverges.  In particular you will look at two different classes of infinite products, rational and exponential:
+	\begin{align}
+		&\prod_{n=1}^\infty \left(1 + \frac{f(n)}{g(n)} \right) \label{eq:poly}\\
+		&\prod_{n=1}^\infty (1 + b^n) \label{eq:exp}
+	\end{align}
+	where $f(n)$ and $g(n)$ are polynomials and $b>0$ is a constant number.  By running your code multiple times, changing the formula for the \tt{lambda} function each time, you can look at many different examples from these two classes and the print out of the last 15 terms will tell you it is converging or diverging.
+	
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+		\item A PDF file written with Latex named \tt{I9\_PartialProd2\_LastName.pdf} that describes the pattern your found for when the two classes of infinite products given above converge and diverge.  That is, state a condition for when you think an infinite series of the form \eqref{eq:poly} converges, and a condition for when an infinite series of the form \eqref{eq:exp} converges.
+		
+		  In particular, give two examples of each class, one of which that converges, the other that diverges.  So, this will be four examples in total.
+	\end{itemize}
+
+	
+\end{document}
