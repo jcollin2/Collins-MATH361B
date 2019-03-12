@@ -1,0 +1,165 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{N.1a}
+\newcommand\duedate{3/18/2019}
+\newcommand\assignmenttype{Number Theory}
+\newcommand\foldername{\tt{NumberTheory} }
+\newcommand\filename{\tt{N1\_Collatz\_Name.py}\;\;}
+\newcommand\probname{Collatz Conjecture}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 
+	 Points: 2 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Find sub-theorems that can be proven \\ from a conjecture
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	The Collatz conjecture is one of those quintessential number theory problems that is easy to state but incredibly difficult to prove.  In fact, this particular problem is so difficult that it has not yet been proven, despite that fact that the conjecture was stated by Lothar Collatz in 1937.  Paul  Erd\H{o}s said of this problem that ``Mathematics may not be ready for such problems".
+	
+	The problem involves a sequence of numbers $a_n$ which are defined iteratively.  We start with some positive integer $n$ and make that the first term of the sequence, that is we set $a_0 = n$.  Each term is then defined by considering the term before it, using the following relation,
+	\[ a_{i+1} = \begin{cases} a_i/2 \hspace{.1in}& \text{ if } a_i \text{ is even} \\
+ 			3 a_i + 1 & \text{ if } a_i \text{ is odd}
+ 			\end{cases}
+ 		\]	
+ 		
+ 	For instance, if we set the first term to be $a_0 = 6$, then the next term would be $a_1 = a_0/2 = 3$, since 6 is even.  The term $a_2 = 3a_1 + 1 = 10$ since 3 is odd.  Continuing like this, the sequence would look like
+ 	\[ 6 \rightarrow 3 \rightarrow 10 \rightarrow 5 \rightarrow 16 \rightarrow 8 \rightarrow 4 \rightarrow 2 \rightarrow 1\]
+ 	Note that after we reach 1, the sequence will repeat forever between $1 \rightarrow 4 \rightarrow 2 \rightarrow 1$.  The Collatz conjecture can be stated as: \textit{The sequence of terms will eventually reach 1, no matter what initial positive integer is chosen for $a_0$.}
+ 	
+ 	The Collatz has been shown to be true for all integers less than $87 \cdot 2^{60}$.  While this is a very large number, it does mean the conjecture is true.  There may still exists an integer for which the sequence either diverges or loops periodically in a way that does not contain 1.  It will only take \textbf{one} starting value for this sequence that diverges or does not ever reach 1 to prove the conjecture is false.  To prove it is true for all positive integers is a problem that has eluded mathematicians for almost a century.  
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+%\section*{Program Criteria}
+%	Write a program that does the following:
+%	\begin{itemize}
+%		\item Your program will have two input variables
+%		\begin{itemize}
+%			\item \tt{a0}: The initial term in the sequence.
+%			\item \tt{N}: The total number of terms to compute in the sequence.
+%		\end{itemize}
+%		\item Compute the first \tt{N} terms in the sequence, starting with the value \tt{a0}, and store the sequence in a list or numpy array.  Stop computing terms early if your terms reach 1.
+%		\item Print out many terms it took to reach 1, with appropriate descriptive text.  If you never reached 1, print out a message that you did not reach 1 after \tt{N} terms.		
+%	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	You will use your program to conjecture some ``sub-theorems" and attempt to prove them.  
+	
+	Place a pdf named \tt{N1a\_Collatx\_Name.pdf}  in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item Include 3 conjectures you have found related to the Collatz Conjecture.  The more interestings these conjectures are, the better.
+		\item Include an \textbf{attempt} at a proof to one of the conjectures.  This proof does not have to be perfect, or even totally complete, but it should be a good effort.  Even if you are unable to come up with a complete proof, give as much of the proof as you can, and make it clear where the holes are in the proof.
+	\end{itemize}
+
+	
+\end{document}
