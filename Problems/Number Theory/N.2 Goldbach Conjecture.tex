@@ -1,0 +1,174 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{N.2}
+\newcommand\duedate{3/20/2019}
+\newcommand\assignmenttype{Number Theory}
+\newcommand\foldername{\tt{NumberTheory} }
+\newcommand\filename{\tt{N2\_Goldbach\_Name.py}\;\;}
+\newcommand\probname{Goldbach's Other}
+\newcommand\probnametwo{Conjecture}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname} \\ \Huge \textbf{\probnametwo}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename
+	 
+	 Points: 5 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Mix of programming skills
+			\item Disprove a conjecture
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	There is another famous conjecture in number theory called Goldbach's conjecture.  This states that
+	\begin{center}
+		Every even number greater than 2  can be written as the sum of two primes.	
+	\end{center}
+	This has baffled some of the greatest mathematicians for almost 300 years.  But we will not be considering this conjecture for this problem.  Instead we will consider another conjecture by Goldbach:
+	\begin{center}
+		Every odd composite number can be written as the sum of a prime and twice a square.
+	\end{center}
+	So for example, 
+	\begin{align*}
+		9 &= 7 + 2 \by 1^2 \\
+		15 &= 7 + 2 \by 2^2 \\
+		21 &= 3 + 2 \by 3^2.
+	\end{align*}
+	
+	This conjecture has since been proven \textbf{false}, but it works for quite a few numbers.  The goal of this problem is to write a program to test this conjecture and find the first  odd composite number for which this conjecture does not hold true.  Essentially, your goal is to disprove this conjecture.
+
+ 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+%	\prog{
+%		\begin{itemize}
+%			\item Create function: \tt{def func\_name(params):}
+%			\item Loops syntax: \tt{for ii in range(N)}
+%			\item Create empty list: \tt{my\_list = []}
+%			\item Append to list: \tt{my\_list.append(new\_thing)}
+%		\end{itemize}
+%		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Compute the first odd composite number such that it cannot be written as the sum of a prime and twice a square.  Stop once you have found this number.
+		\item Print out this smallest counterexample, with appropriate descriptive text.		
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+	\end{itemize}
+
+	
+\end{document}
