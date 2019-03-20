@@ -1,0 +1,167 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{N.3}
+\newcommand\duedate{3/25/2019}
+\newcommand\assignmenttype{Number Theory}
+\newcommand\foldername{\tt{NumberTheory} }
+\newcommand\filename{\tt{N3\_ZeroDivisors\_Name.py}\;\;}
+\newcommand\probname{Zero Divisors of $\Zbb_m$}
+\newcommand\probnametwo{}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname} \\ \Huge \textbf{\probnametwo}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename
+	 
+	 Points: 2 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Mix of programming skills
+			\item Disprove a conjecture
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	Recall the basics of modular arithmetic and the group $\Zbb_m$.  We know that the set of all residue classes is given by,
+	\[ \Zbb_m = \{ 0, 1, 2, \ldots, (m-1) \}. \]
+	Addition, subtraction and multiplication on these elements is done similarly to regular integers, but using modular arithmetic.  
+	
+	For example, assume we are considering $\Zbb_7 = \{ 0,1,2,3,4,5,6 \}$.  In $\Zbb_7$ we have that 5+4=2, because $9 \equiv 2 (mod \;7)$.  Also, $2 \cdot 7 = 0$, because $2 \cdot 7 = 14$ and 14 is a multiple of 7, so it is zero in $\Zbb_7$.  
+	
+	Many things are similar between $\Zbb_m$ and the integers, but some things are different.  One of those things involves zero divisors.  A \textbf{zero divisor} is an element such that when you multiply it by a non-zero element you end up with zero.  So for instance, about we saw that in $\Zbb_7$, when you multiple 2 and 7, they equal zero.  Therefore, both 2 and 7 are zero divisors in the set $\Zbb_7$.  The number of zero divisors and which elements are zero divisors will change depending on what the $m$ is in $\Zbb_m$.    
+
+ 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+%	\prog{
+%		\begin{itemize}
+%			\item Create function: \tt{def func\_name(params):}
+%			\item Loops syntax: \tt{for ii in range(N)}
+%			\item Create empty list: \tt{my\_list = []}
+%			\item Append to list: \tt{my\_list.append(new\_thing)}
+%		\end{itemize}
+%		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Create an input variable \tt{m} that will represent which $\Zbb_m$ set we are working with.
+		\item Determine which elements of $\Zbb_m$ are  zero divisors.
+		\item Print out all the zero divisors and how many zero divisors there are, with appropriate descriptive text.	
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+		\item A pdf file \tt{N3\_ZeroDivisors\_Name.pdf} describe a simple test for whether a particular element of $\Zbb_m$ is  a zero divisor.  This test will probably depend on $m$.  This should not be a description of your program, but a simpler test that will describe all elements that are zero divisors.
+	\end{itemize}
+
+	
+\end{document}
