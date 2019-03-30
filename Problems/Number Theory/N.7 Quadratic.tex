@@ -1,0 +1,199 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{N.7}
+\newcommand\duedate{4/5/2019}
+\newcommand\assignmenttype{Number Theory}
+\newcommand\foldername{\tt{NumberTheory} }
+\newcommand\filename{\tt{N7\_Quadratic\_Name.py}\;\;}
+\newcommand\probname{Quadratic Residues}
+\newcommand\probnametwo{}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname} \\ \Huge \textbf{\probnametwo}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename
+	 
+	 Points: 5 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Consider properties of quadratic residues
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	When considering elements of $ \Zbb_p$, we define a quadratic residue to be the numbers $n \in \Zbb_p$ such that there exists a $k \in \Zbb_p$ where
+	\[ n = k^2. \]
+	
+	For example, let us consider $\Zbb_11$.  Then 1 is an obvious quadratic residue, since $1 = 1^2$.  However, 3 is also a quadratic residue of $\Zbb_11$, since $3 = 6^2 = 36 \equiv 3 \text{(mod)} 11$.  
+	
+	There are some interesting patterns that occur when we consider $\Zbb_p$ where $p$ is prime.  Therefore, for this problem we assume that $p$ is prime for each of our $\Zbb_p$.  We will consider two questions.  First, how many elements of $\Zbb_p$ are quadratic residues.  The second question we consider is what values for $p$ makes $-1$ a quadratic residue.  Recall that -1 = (p-1) in $\Zbb_p$.  
+	
+	
+ 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+%	\prog{
+%		\begin{itemize}
+%			\item Create function: \tt{def func\_name(params):}
+%			\item Loops syntax: \tt{for ii in range(N)}
+%			\item Create empty list: \tt{my\_list = []}
+%			\item Append to list: \tt{my\_list.append(new\_thing)}
+%		\end{itemize}
+%		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Create a variable \tt{P} to denote the maximum value for $p$ in your code.
+		\item Counts the number of quadratic residues in $\Zbb_p$.
+		\begin{itemize}
+			\item Create a 2D numpy array \tt{count} to store your results.  This array will have 2 columns:
+			\begin{center}
+				\begin{tabular}{|c|c|}
+				\hline
+					$p$ & Number of quadratic residues in $\Zbb_p$	 \\
+				\hline
+				\end{tabular}
+	
+			\end{center}
+			The first column stores the value for $p$, the second column stores the number of quadratic residues in $\Zbb_p$.	
+			\item For all primes $p \leq P$, count the number of quadratic residues in $\Zbb_p$ and store the number in the \tt{count} array.
+			\item Print out \tt{count} with appropriate text.
+				\end{itemize}
+			
+			\item Check if $-1 \in \Zbb_p$ is a quadratic residue
+			\begin{itemize}
+				\item Create a 2D numpy array \tt{neg\_one} to store your results.  This array will have 2 columns:
+				\begin{center}
+				\begin{tabular}{|c|c|}
+				\hline
+					$p$ & Is -1 quadratic residue?	 \\
+				\hline
+				\end{tabular}
+				
+			\end{center}
+			The first column stores the value for $p$, the second column stores a \tt{True} or \tt{False} values, with \tt{True} representing that -1 is a quadratic residue, and \tt{False} stating otherwise.
+			\item For all primes $p \leq P$, determine if $-1 \in \Zbb_p$ is a quadratic residue of $\Zbb_p$ and store the result in the \tt{neg\_one} array.
+			\item Print out \tt{neg\_one} with appropriate text.
+			\end{itemize}
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+		\item A pdf file \tt{N7\_Quadratic\_Name.pdf} created with Latex:
+		\begin{itemize}
+			\item State any patterns you notice relating the number of quadratic residues in $\Zbb_p$ to the value of $p$.
+			\item State any patterns you notices relating whether $-1 \in \Zbb_p$ is a quadratic residue to the value of $p$.
+		\end{itemize}
+	\end{itemize}
+
+	
+\end{document}
