@@ -1,0 +1,160 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty, hyperref}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{F.3}
+\newcommand\duedate{5/3/2019}
+\newcommand\assignmenttype{Final Project}
+\newcommand\foldername{\tt{FinalProject} }
+\newcommand\filename{\tt{F3\_Prob116\_Name.py}\;\;}
+\newcommand\probname{Problem 116}
+\newcommand\probnametwo{}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{1}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname} \\ \Huge \textbf{\probnametwo}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename
+	 
+	 Points: 20 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+%\begin{minipage}{.45\textwidth}
+%	\begin{center}
+%	
+%	\textbf{\Large Learning Objectives}
+%	
+%	\doublebox{
+%		\begin{Bitemize}
+%			\item Consider properties of quadratic residues
+%		\end{Bitemize}
+%	} 
+%	\end{center}
+%\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	Begin by looking at the Project Euler page for this problem, {\color{blue} \href{https://projecteuler.net/problem=116}{Problem 116}}.  We are given $N$ blank squares, and a collection of red tiles that are 2 squares long, green tiles that are 3 squares long, and blue tiles that are 4 squares long.  The goal is to determine how many different ways there are to place the red tiles, green tiles and blue tiles, separately, onto the $N$ blank squares.  We assume the colors cannot be mixed for this problem.  When there are 5 blank squares, the solution is shown on the Project Euler page.
+
+
+	
+	
+ 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+%	\prog{
+%		\begin{itemize}
+%			\item Create function: \tt{def func\_name(params):}
+%			\item Loops syntax: \tt{for ii in range(N)}
+%			\item Create empty list: \tt{my\_list = []}
+%			\item Append to list: \tt{my\_list.append(new\_thing)}
+%		\end{itemize}
+%		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+	\end{itemize}
+
+	
+\end{document}

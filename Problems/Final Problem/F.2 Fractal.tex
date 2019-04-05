@@ -1,0 +1,183 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty, hyperref}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{F.2}
+\newcommand\duedate{5/3/2019}
+\newcommand\assignmenttype{Final Project}
+\newcommand\foldername{\tt{FinalProject} }
+\newcommand\filename{\tt{F2\_Fractal\_Name.py}\;\;}
+\newcommand\probname{Fractals}
+\newcommand\probnametwo{}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{1}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname} \\ \Huge \textbf{\probnametwo}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename
+	 
+	 Points: 20 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+%\begin{minipage}{.45\textwidth}
+%	\begin{center}
+%	
+%	\textbf{\Large Learning Objectives}
+%	
+%	\doublebox{
+%		\begin{Bitemize}
+%			\item Consider properties of quadratic residues
+%		\end{Bitemize}
+%	} 
+%	\end{center}
+%\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	Start with a shape, say a triangle.  Consider each point on the triangle to be defined by a set of vectors 
+	\[ S_0 = \{ \begin{bmatrix} x \\ y \end{bmatrix} : \text{the point } (x,y) \text{ is a point on the triangle} \}.\]
+	
+	  Different values for $t$ correspond to different places on the triangle.  To generate a fractal, we will perform 3 transformations on all of these vectors to generate a new set of points $S_1$.  Here is one example of these transformations.  For each vector $v \in S_0$, we generate 3 new vectors $w_1, w_2, w_3$ 
+	
+	\begin{align*}
+		w_1 &= \begin{bmatrix}
+			\frac{1}{4} & 0 \\ 0 & \frac{1}{4} \end{bmatrix}v + \begin{bmatrix} 0 \\ 0 \end{bmatrix} \\
+			w_2 &= \begin{bmatrix}\frac{1}{4} & 0 \\ 0 & \frac{1}{4}  \end{bmatrix}v + \begin{bmatrix} 0.5 \\ 0 \end{bmatrix} \\
+			w_3 &= \begin{bmatrix} \frac{1}{4} & 0 \\ 0 & \frac{1}{4} \end{bmatrix}v + \begin{bmatrix} 0.5 \\ 0.5 \end{bmatrix}
+	\end{align*}
+	
+	All three of these new vectors are then added to a new set $S_1$.  If this process is performed for all vectors $v \in S_0$, we generate a new set $S_1$.  When all the points in $S_1$ are plotted we see three new triangles.  We then perform this transformation yet again on all vectors in $S_1$ to generate a set $S_2$.  By continuing this process repeatedly, we obtain a fractal image.
+	
+	Your project will be to generate all the $S_i$ sets up to some maximum value for $i$.  The plot each one to see how the image changes.  In general, the transformations shown above can be written as
+	\begin{align*}
+		w_1 &= A_1v + b_1 \\
+		w_2 &= A_2v + b_2 \\
+		w_3 &= A_3v + b_3 	
+	\end{align*}
+	where $A_i$ are matrices and $b_i$ are vectors.  You will also be changing the matrices and vectors to see how it affects the fractal image.  In addition, you will change the initial image to see how it affects the resulting fractal.
+
+
+	
+	
+ 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+%	\prog{
+%		\begin{itemize}
+%			\item Create function: \tt{def func\_name(params):}
+%			\item Loops syntax: \tt{for ii in range(N)}
+%			\item Create empty list: \tt{my\_list = []}
+%			\item Append to list: \tt{my\_list.append(new\_thing)}
+%		\end{itemize}
+%		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Has an input variable \tt{N} to determine the $2^N$ number of bits on the circle. 
+		\item Determine how many binary circles have all distinct $N$ length subsequences.  Be sure to ignore rotations of the circle. (That is, all $2^N$ rotations of a circle with distinct $N$ length subsequences will count as just one such binary circle.)
+		\item Print out the number of binary circles, as well as the elements of the circles, starting at the top and going in clockwise order.
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+		\item A PDF file \tt{F1\_Prob265\_Name.pdf} that describes how your program works.  This should be a description of how you went about solving this problem.  You should go into some detail about your solution method, but I don't want to see something about every \tt{if} statement and \tt{for} loop.
+	\end{itemize}
+
+	
+\end{document}

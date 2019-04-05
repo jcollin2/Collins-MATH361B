@@ -1,0 +1,176 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty, hyperref}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{F.5}
+\newcommand\duedate{5/3/2019}
+\newcommand\assignmenttype{Final Project}
+\newcommand\foldername{\tt{FinalProject} }
+\newcommand\filename{\tt{F5\_Newton\_Name.py}\;\;}
+\newcommand\probname{Newton Fractals}
+\newcommand\probnametwo{}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{1}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname} \\ \Huge \textbf{\probnametwo}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename
+	 
+	 Points: 20 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+%\begin{minipage}{.45\textwidth}
+%	\begin{center}
+%	
+%	\textbf{\Large Learning Objectives}
+%	
+%	\doublebox{
+%		\begin{Bitemize}
+%			\item Consider properties of quadratic residues
+%		\end{Bitemize}
+%	} 
+%	\end{center}
+%\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	Newton's method is a way of solving an equation
+	\[ f(z) = 0.\]
+	It is an iterative method.  We start it with an initial 	``guess" to the solution, $z_0$.  We then find a better approximation, $z_1$ of the solution through the following equation,
+	\[ z_1 = z_0 - \frac{f(z_0)}{f'(z_0)}, \]
+	where $f'(z)$ is the derivative of $f(z)$.  We repeat this process multiple times with the same formula,
+	\[ z_{n+1} = z_n - \frac{f(z_n)}{f'(z_n)},\]
+	 until eventually we converge and the iterations start to get close together,
+	 \[ | z_{n+1} - z_n | < \text{TOL},\]
+	 where TOL is some small tolerance defining how close we want the iterations to get before we stop.
+	 
+	 The final approximation to $f(z) = 0$ depends on where we start, $z_0$.  If we choose a different starting point, we might converge to a different solution, as $f(z) = 0$ might have multiple solutions.  One thing to note is that the solutions might be complex, and so the initial starting points $z_0$ can also be complex.
+	 
+	 A Newton fractal is a colored complex plane that denotes pictorially which solution of $f(z) = 0$ each initial point $z_0$ converges to.  A number of these fractals can be seen at {\color{blue}\href{https://en.wikipedia.org/wiki/Newton_fractal}{Newton Fractal}}.  As an example consider the equation 
+	 \[ f(z) = z^3 - 1.\]
+	 This has three solutions, ${\color{red}z=1}, {\color{blue}z= -e^{i\pi/3}}, {\color{green}z = e^{2i\pi/3}}$.  We label each of these solutions with a color.  Then, using Newton's method, say we start with an initial iterate $z_0 = 1+i$.  Using this initial guess, Newton's method converges to 1.  Therefore, we would color a dot on the complex plane at (1,1) red.  However, if we start at $z_0 = -1-i$, this converges to $-e^{i\pi/3}$ and so we would color a dot on the complex plane at (-1,-1) blue.  This would be done for all initial iterates in the complex plane, and all those colored dots would create a Newton fractal.
+	 
+	 In this project, you will create a program to generate a Newton Fractal for any function $f(z)$.  Then you can play around with the function and see what different Newton fractals are generated.  In addition, some pictures incorporate the number of iterations it takes to converge in the image.  This can also be incorporated into your code to create and even more interesting picture.
+
+
+	
+	
+ 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+%	\prog{
+%		\begin{itemize}
+%			\item Create function: \tt{def func\_name(params):}
+%			\item Loops syntax: \tt{for ii in range(N)}
+%			\item Create empty list: \tt{my\_list = []}
+%			\item Append to list: \tt{my\_list.append(new\_thing)}
+%		\end{itemize}
+%		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+	\end{itemize}
+
+	
+\end{document}

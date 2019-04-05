@@ -1,0 +1,163 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty, hyperref}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{F.1}
+\newcommand\duedate{5/3/2019}
+\newcommand\assignmenttype{Final Project}
+\newcommand\foldername{\tt{FinalProject} }
+\newcommand\filename{\tt{F1\_Prob265\_Name.py}\;\;}
+\newcommand\probname{Problem 265: Binary Circles}
+\newcommand\probnametwo{}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{1}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname} \\ \Huge \textbf{\probnametwo}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename
+	 
+	 Points: 20 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+%\begin{minipage}{.45\textwidth}
+%	\begin{center}
+%	
+%	\textbf{\Large Learning Objectives}
+%	
+%	\doublebox{
+%		\begin{Bitemize}
+%			\item Consider properties of quadratic residues
+%		\end{Bitemize}
+%	} 
+%	\end{center}
+%\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	Assume we have $2^N$ binary digits, that is 0's or 1's (henceforth called \emph{bits}).  These bits can be arranged in a circle in many different ways.  For a visual of this, see {\color{blue}\href{https://projecteuler.net/problem=265}{Problem 265}}.  These are called \emph{binary circles}.  At this link, an example of $N=3$ is given.  If we examine all the $N$ element subsequences of the binary circles, taking each subsequence in clockwise order, we want to determine which circles exist such that all $2^N$ subsequences are distinct.
+	
+	Obviously, once you find such a circle, you can simply rotate the elements and get another circle.  In light of that, we will ignore all rotations of a circle.  When  $N=3$, ignoring circle rotations, there are only 2 such binary circles.
+	
+	
+ 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+%	\prog{
+%		\begin{itemize}
+%			\item Create function: \tt{def func\_name(params):}
+%			\item Loops syntax: \tt{for ii in range(N)}
+%			\item Create empty list: \tt{my\_list = []}
+%			\item Append to list: \tt{my\_list.append(new\_thing)}
+%		\end{itemize}
+%		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Has an input variable \tt{N} to determine the $2^N$ number of bits on the circle. 
+		\item Determine how many binary circles have all distinct $N$ length subsequences.  Be sure to ignore rotations of the circle. (That is, all $2^N$ rotations of a circle with distinct $N$ length subsequences will count as just one such binary circle.)
+		\item Print out the number of binary circles, as well as the elements of the circles, starting at the top and going in clockwise order.
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+		\item A PDF file \tt{F1\_Prob265\_Name.pdf} that describes how your program works.  This should be a description of how you went about solving this problem.  You should go into some detail about your solution method, but I don't want to see something about every \tt{if} statement and \tt{for} loop.
+	\end{itemize}
+
+	
+\end{document}
