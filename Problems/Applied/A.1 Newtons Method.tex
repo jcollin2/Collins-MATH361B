@@ -1,0 +1,179 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{A.1}
+\newcommand\duedate{4/5/2019}
+\newcommand\assignmenttype{Applied}
+\newcommand\foldername{\tt{Applied} }
+\newcommand\filename{\tt{A1\_Newton\_Name.py}\;\;}
+\newcommand\probname{Newton's Method}
+\newcommand\probnametwo{}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname} \\ \Huge \textbf{\probnametwo}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename
+	 
+	 Points: 5 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+	\textbf{\Large Learning Objectives}
+	
+	\doublebox{
+		\begin{Bitemize}
+			\item Implement a given algorithm
+		\end{Bitemize}
+	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	Newton's method is an algorithm for approximating the solution to an algebraic equation of the form,
+	\[ f(z) = 0.\]
+	The goal is to find a value of $z$ the makes the function $f = 0$.  This is done with Newton's method by an iterative process.  We begin with an initial iterate $z_0$.  This is a good guess to the solution (though sometimes the guess isn't very good at all if we have no information about the solution).  We then attempt to ``improve" the guess with the following equation
+	\[ z_1 = z_0 - \frac{f(z_0)}{f'(z_0)}.\]
+	The idea being that $z_1$ is a better approximation.  This is continued multiple times, using the iterative formula
+	\[ z_{n+1} = z_n -  \frac{f(z_n)}{f'(z_n)}.\]
+	
+	This iterative process is stopped when the iterations begin to get close together.  So each iteration we test to see if $|z_{n+1} - z_n| < \text{TOL}$.  Where TOL is some small number we choose, depending on how accurate we want our approximation.  We may also stop the iterative process if we have done too many iterations, as this process can continue forever in some situations.
+	
+	
+ 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+%	\prog{
+%		\begin{itemize}
+%			\item Create function: \tt{def func\_name(params):}
+%			\item Loops syntax: \tt{for ii in range(N)}
+%			\item Create empty list: \tt{my\_list = []}
+%			\item Append to list: \tt{my\_list.append(new\_thing)}
+%		\end{itemize}
+%		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Define a variable \tt{N = 100} to represent the maximum number of iterations to perform.  
+		\item Define a variable \tt{TOL = 1e-4} to represent the tolerance at which we will stop the iterative process.
+		\item Define a variable \tt{z0} for the initial iterate of Newton's method
+		\item Create a \tt{lambda} function for $f(z)$ and another for $f'(z)$.
+		\item Implement Newton's method.  Make your iterations stop \textbf{either} when $|z_{n+1} - z_n| < $TOL, or when you have done \tt{N} iterations.  Store all the $z_i$ iterations you calculate, as well as the spacing between them, that is $|z_{i+1} - z_i|$.
+		\item Print out if the iterations stopped due to reaching tolerance, or stopped because you did the max number of iterations.  The first means you converged, the second means you did not.
+		\item Print out all iterations you calculated, along with the difference between them that you stored.
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+		\item A pdf file \tt{A1\_Newton\_Name.pdf} created with Latex:
+		\begin{itemize}
+			\item Use your program to approximate all solutions to the equation
+			\[ \frac{1}{100}[x^4 + (e -2 - \sqrt{2})x^3 + (2\sqrt{2} - \sqrt{2}e-3-2e)x^2 + (2\sqrt{2}e + 3\sqrt{2} -3e)x + 3\sqrt{2}e] = 0.\]
+			Write down all  approximations to the solution
+			\item Use your program to approximate two positive and two negative solutions to the equation,
+			 \[ \tan(x) - x -2 = 0.\]
+		\end{itemize}
+	\end{itemize}
+
+	
+\end{document}
