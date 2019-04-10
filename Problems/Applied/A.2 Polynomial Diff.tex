@@ -1,0 +1,173 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{A.2}
+\newcommand\duedate{4/15/2019}
+\newcommand\assignmenttype{Applied}
+\newcommand\foldername{\tt{Applied} }
+\newcommand\filename{\tt{A2\_Polys\_Name.py}\;\;}
+\newcommand\probname{Polynomial}
+\newcommand\probnametwo{Manipulation}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname} \\ \Huge \textbf{\probnametwo}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename
+	 
+	 Points: 5 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+%	\textbf{\Large Learning Objectives}
+	
+%	\doublebox{
+%		\begin{Bitemize}
+%			\item Consider properties of quadratic residues
+%		\end{Bitemize}
+%	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	When implementing Newton's method, usually you must compute the derivative by hand, or approximate it with some other method.  However, when working with polynomials, the simplicity of these functions allows the process to be automated in the program.  
+	
+	With this program, you will write functions to evaluate a polynomial at a point, and differentiate a polynomial.  To do this, we must find a better way to represent a polynomial than using a \tt{lambda} function.  The structure of a polynomial is such that we can represent it with a list.  The elements of the list will hold the coefficients of the polynomial, using the standard basis.  
+	
+	For example, if we have the  polynomial
+	\[ p(x) = 4x^4 - 8x^3 + 2x - 9,\]
+	one way we can represent this in a list of length 5 as $$\tt{p = [-9, 2, 0, -8, 4]}.$$  Note that the $i^{th}$ element of the list is the coefficient for the $x^i$ term in the polynomial.  Now we can use this list to evaluate $p(x)$ and even calculate a new list to represent $p'(x)$ or $\int p(x)\,dx$. 
+	
+	
+ 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+%	\prog{
+%		\begin{itemize}
+%			\item Create function: \tt{def func\_name(params):}
+%			\item Loops syntax: \tt{for ii in range(N)}
+%			\item Create empty list: \tt{my\_list = []}
+%			\item Append to list: \tt{my\_list.append(new\_thing)}
+%		\end{itemize}
+%		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Define a polynomial \tt{p} in whatever way you choose to represent it in your code.  Be sure to explain how your polynomial is represented  using comments.
+		\item One \tt{def} function  that evaluates a polynomial at a given point.
+		\item One \tt{def} function that returns the derivative of a polynomial.
+		\item One \tt{def} function that computes the definite integral $\int_a^b p(x) \,dx$.
+		\item Use your functions to print out:
+		\begin{itemize}
+			\item Your polynomial evaluated at a point $c$, that is $p(c)$, with appropriate text,
+			\item The derivative of your polynomial evaluated at a point $c$, that is $p'(c)$, with appropriate text,
+			\item The definite integral of your polynomial, that is $\int_a^b p(x) \,dx$.
+		\end{itemize}
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+	\end{itemize}
+
+	
+\end{document}
