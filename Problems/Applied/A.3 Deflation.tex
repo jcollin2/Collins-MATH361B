@@ -1,0 +1,178 @@
+\documentclass{article}
+\usepackage{JBpack}
+\usepackage{fancyhdr, fancybox}
+\usepackage{extramarks, multicol} % Required for headers and footers
+\usepackage{sectsty}
+
+\def\prog#1{
+\vspace{.1in}\begin{mdframed} \begin{center} \textbf{Programming Reminders} \end{center}#1 \end{mdframed} }
+
+
+
+\sectionfont{\underline}
+
+
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=7.5in
+\textheight=9.0in
+\headsep=0.25in 
+\headheight = 20pt
+\hoffset = -.5in
+
+
+
+
+\pagestyle{fancy}
+
+\lhead{\large Due Date: \duedate}
+%\chead{}
+\rhead{\large Problem \problemnumber: \probname}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand{\labelitemii}{$\star$}
+
+
+
+
+
+
+
+%%%%%% Assignment Data %%%%%%%%%%
+\newcommand\problemnumber{A.3}
+\newcommand\duedate{4/19/2019}
+\newcommand\assignmenttype{Applied}
+\newcommand\foldername{\tt{Applied} }
+\newcommand\filename{\tt{A3\_Deflation\_Name.py}\;\;}
+\newcommand\probname{Polynomial}
+\newcommand\probnametwo{Deflation}
+
+
+
+
+
+
+
+\begin{document}
+\begin{multicols}{2}
+
+
+
+
+%%%%%%% Title %%%%%%%%%%	
+\begin{minipage}{.5\textwidth}
+	 \begin{center} \shadowbox{\begin{Bcenter} \Huge \underline{Problem \problemnumber} \vspace{.25in} \\  \Huge \textbf{\probname} \\ \Huge \textbf{\probnametwo}  \end{Bcenter}  }
+	 
+	 {\Large Due Date: \duedate
+	 
+	 Folder: \foldername
+	 
+	 File Name: \filename
+	 
+	 Points: 5 points}
+	  \end{center}
+ \end{minipage}
+
+\columnbreak
+
+
+%%%%% Learning Objectives %%%%%%%
+\begin{minipage}{.45\textwidth}
+	\begin{center}
+	
+%	\textbf{\Large Learning Objectives}
+	
+%	\doublebox{
+%		\begin{Bitemize}
+%			\item Consider properties of quadratic residues
+%		\end{Bitemize}
+%	} 
+	\end{center}
+\end{minipage}
+\end{multicols}
+
+
+
+
+
+
+%%%%%%% Background %%%%%%%%%%%%
+\section*{Problem Background}
+	When working with polynomials, we are in the unique position of knowing how many solutions exist.  With this information, we can use a method to find \textbf{all} solutions to a polynomial.  This is done through a method called \emph{deflation}.  This idea behind deflation is to first fine one solution $x=a$ to some polynomial equation $p(x)=0$.  Since $a$ is a solution, we know we can write $p(x) = (x-a)q(x)$, for some polynomial $q(x)$.  To find another solution to $p(x)$ we solve $q(x) = 0$.  This process can be iterated until all solutions  to $p(x) = 0$ are found.
+	
+	The obvious question is how do we find $q(x)$ once we know a solution $x=a$.  This is done through polynomial division.  You have probably used polynomial division in high school at some point.  Here, you will be given pseudocode to implement a polynomial division algorithm.  Pseudocode is a way of writing an algorithm without a particular language.  It shows the steps of the algorithm, but leaves it up to the programming to put in the particular details, as these details will differ from one language to another.
+	
+	The idea behind polynomial division is the following.  Given two polynomials $f(x)$ and $g(x)$, we can write
+	\[ f(x) = q(x) g(x) + r(x),\]
+	where deg($r$) $<$ deg($g$). (Note: deg($f$) is the degree of the polynomial $f$.)  The polynomial $q$ is called the quotient and $r$ is the remainder.  We see that if $r(x) = 0$ then $f(x) = q(x)g(x)$ and we say that $g(x)$ divides $f(x)$ and $(f/g)(x) = q(x)$.  The algorithm for polynomial division is given by the following pseudocode.
+	
+	\begin{align*}
+		&\text{Input: } g, f \\
+		 &\text{Output: } q, r \\
+		 &q:=0; r:=f\\
+		 &\text{WHILE } r \neq 0 \text{ AND LT}(g) \text{ divides LT} (r) \text{ DO} \\
+		 &\hspace{.2in} q:=q + \text{LT}(r)/\text{LT}(g) \\
+		 &\hspace{.2in} r:= r - (\text{LT}(r)/\text{LT}(g))g
+	\end{align*}  
+	where LT$(g)$ represents the leading term of the polynomial $g$.  So for example, LT$(2x^3 - 5x + 4) = 2x^3$.  We also know the following fact,
+	\[ \text{LT}(f) \text{ divides LT}(g) \Leftrightarrow \text{deg}(g) \leq \text{deg}(g).\]
+	With all this, you should be able to code up the polynomial division algorithm, which is the object of this problem.
+	
+ 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+
+	
+	
+	
+	
+	
+	
+	
+	
+%	\prog{
+%		\begin{itemize}
+%			\item Create function: \tt{def func\_name(params):}
+%			\item Loops syntax: \tt{for ii in range(N)}
+%			\item Create empty list: \tt{my\_list = []}
+%			\item Append to list: \tt{my\_list.append(new\_thing)}
+%		\end{itemize}
+%		}
+
+
+
+
+%%%%%%%%%% Program Criteria %%%%%%%%%
+\section*{Program Criteria}
+	Write a program that does the following:
+	\begin{itemize}
+		\item Define a polynomial \tt{f} in whatever way you choose to represent it in your code.  Be sure to explain how your polynomial is represented  using comments.
+		\item  Define a polynomial \tt{g} in whatever way you choose to represent it in your code.
+		\item Create a \tt{def} function that implements the polynomial division algorithm shown above.
+		\item Use your function to determine the quotient \tt{q} and remainder \tt{r} for the two polynomials you defined above.  Print out all four polynomials \tt{f,g,q,r} with appropriate descriptive text.
+	\end{itemize}
+
+
+
+
+
+
+
+%%%%%%%%% Deliverables %%%%%%%%%
+\section*{Deliverables}
+	
+	
+	Place the following in a folder named \foldername in your repository:
+	\begin{itemize}
+		\item A Python file \filename  that satisfies the program criteria.
+	\end{itemize}
+
+	
+\end{document}
