@@ -158,9 +158,10 @@
 \section*{Program Criteria}
 	Write a program that does the following:
 	\begin{itemize}
-		\item Has an input variable \tt{N} to determine the $2^N$ number of bits on the circle. 
-		\item Determine how many binary circles have all distinct $N$ length subsequences.  Be sure to ignore rotations of the circle. (That is, all $2^N$ rotations of a circle with distinct $N$ length subsequences will count as just one such binary circle.)
-		\item Print out the number of binary circles, as well as the elements of the circles, starting at the top and going in clockwise order.
+		\item Create an initial image.  This could be a geometric object, your name, a face.  Really anything that can be plotted in Python and described using vectors, that is points $(x,y)$.
+		\item Apply the above transformations, or something similar, to your image, thus obtaining a new set of  points that looks like 3 new transformed copies of your image.
+		\item Continue applying the transformations to the  previous points for $N$ iterations.  Be sure to make $N$ a variable so that the number of iterations can be changed easily.  
+		\item Plot the final image that is created after $N$ iterations.
 	\end{itemize}
 
 
@@ -176,7 +177,13 @@
 	Place the following in a folder named \foldername in your repository:
 	\begin{itemize}
 		\item A Python file \filename  that satisfies the program criteria.
-		\item A PDF file \tt{F1\_Prob265\_Name.pdf} that describes how your program works.  This should be a description of how you went about solving this problem.  You should go into some detail about your solution method, but I don't want to see something about every \tt{if} statement and \tt{for} loop.
+		\item A PDF file \tt{F1\_Prob265\_Name.pdf} that describes how your program works.  This should be a description of how you went about solving this problem.  You should go into some detail about your solution method, but I don't want to see something about every \tt{if} statement and \tt{for} loop.  As an example of the type of description I'm looking for, see the file \tt{Goldbach\_explanation.doc} in the \tt{Final Problem} folder of my repo.
+		\item Include in your PDF file the original image you used.  
+		\item Include also at least one of the following:
+		\begin{itemize}
+			\item Use a different starting image.  Discuss how the final image after $N$ iterations compares to what you got with your first image.
+			\item Change the transformation done to the image.  This could involve changing the matrix $A_i$, changing the vectors $b_i$, or adding another transformation entirely.  Discuss how the final image compares to the final image using your original transformations.
+		\end{itemize}
 	\end{itemize}
 
 	
